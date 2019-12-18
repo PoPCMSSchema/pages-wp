@@ -1,0 +1,4 @@
+services:
+    page_type_api:
+        class: \PoP\PagesWP\TypeAPIs\PageTypeAPI
+        public: true
