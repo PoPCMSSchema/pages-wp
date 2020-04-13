@@ -19,9 +19,9 @@
     "prefer-stable": true,
     "require": {
         "php" : "~7.1",
-        "getpop/pages": "^1.0@dev",
-        "getpop/queriedobject-wp": "dev-master",
-        "getpop/migrate-pages-wp": "^1.0@dev"
+        "getpop/pages": "~0.1",
+        "getpop/queriedobject-wp": "~0.1",
+        "getpop/migrate-pages-wp": "~0.1"
     },
     "require-dev": {
         "phpunit/phpunit" : ">=7.0",
