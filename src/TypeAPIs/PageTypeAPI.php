@@ -54,12 +54,12 @@ class PageTypeAPI extends CustomPostTypeAPI implements PageTypeAPIInterface
 
     public function getPages(array $query, array $options = []): array
     {
-        $query['post-types'] = ['page'];
+        $query['custom-post-types'] = ['page'];
         return $this->getCustomPosts($query, $options);
     }
     public function getPageCount(array $query = [], array $options = []): int
     {
-        $query['post-types'] = ['page'];
+        $query['custom-post-types'] = ['page'];
         return $this->getCustomPostCount($query, $options);
     }
     public function getPageCustomPostType(): string
