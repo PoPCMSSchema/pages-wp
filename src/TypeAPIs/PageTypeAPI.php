@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace PoP\PagesWP\TypeAPIs;
 
 use function get_post;
+use function get_option;
 use WP_Post;
 use PoP\Pages\TypeAPIs\PageTypeAPIInterface;
 use PoP\CustomPostsWP\TypeAPIs\CustomPostTypeAPI;
@@ -64,5 +65,21 @@ class PageTypeAPI extends CustomPostTypeAPI implements PageTypeAPIInterface
     public function getPageCustomPostType(): string
     {
         return 'page';
+    }
+
+    /**
+     * Get the ID of the static page for the homepage
+     * Returns an ID (int? string?) or null
+     *
+     * @return null|ID
+     */
+    public function getHomeStaticPageID()
+    {
+        if (get_option('show_on_front') == 'page') {
+            $static_page_id = (int) get_option('page_on_front');
+            return $static_page_id > 0 ? $static_page_id : null;
+        }
+
+        return null;
     }
 }
