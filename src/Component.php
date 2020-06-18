@@ -6,6 +6,7 @@ namespace PoP\PagesWP;
 
 use PoP\Root\Component\AbstractComponent;
 use PoP\Root\Component\YAMLServicesTrait;
+use PoP\PagesWP\Config\ServiceConfiguration;
 
 /**
  * Initialize component
@@ -19,7 +20,7 @@ class Component extends AbstractComponent
     {
         return [
             \PoP\Pages\Component::class,
-            \PoP\QueriedObjectWP\Component::class,
+            \PoP\CustomPostsWP\Component::class,
         ];
     }
 
@@ -40,5 +41,6 @@ class Component extends AbstractComponent
     ): void {
         parent::doInitialize($configuration, $skipSchema, $skipSchemaComponentClasses);
         self::initYAMLServices(dirname(__DIR__));
+        ServiceConfiguration::initialize();
     }
 }
