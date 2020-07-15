@@ -4,9 +4,10 @@ declare(strict_types=1);
 
 namespace PoP\PagesWP\TypeAPIs;
 
+use WP_Post;
 use function get_post;
 use function get_option;
-use WP_Post;
+use PoP\Pages\ComponentConfiguration;
 use PoP\Pages\TypeAPIs\PageTypeAPIInterface;
 use PoP\CustomPostsWP\TypeAPIs\CustomPostTypeAPI;
 
@@ -50,6 +51,17 @@ class PageTypeAPI extends CustomPostTypeAPI implements PageTypeAPIInterface
     public function pageExists($id): bool
     {
         return $this->getPage($id) != null;
+    }
+
+    /**
+     * Limit of how many custom posts can be retrieved in the query.
+     * Override this value for specific custom post types
+     *
+     * @return integer
+     */
+    protected function getCustomPostListMaxLimit(): int
+    {
+        return ComponentConfiguration::getPageListMaxLimit();
     }
 
     public function getPages(array $query, array $options = []): array
