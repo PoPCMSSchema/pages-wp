@@ -7,6 +7,7 @@ namespace PoP\PagesWP\TypeAPIs;
 use WP_Post;
 use function get_post;
 use function get_option;
+use PoP\Hooks\Facades\HooksAPIFacade;
 use PoP\Pages\ComponentConfiguration;
 use PoP\Pages\TypeAPIs\PageTypeAPIInterface;
 use PoP\CustomPostsWP\TypeAPIs\CustomPostTypeAPI;
@@ -16,6 +17,23 @@ use PoP\CustomPostsWP\TypeAPIs\CustomPostTypeAPI;
  */
 class PageTypeAPI extends CustomPostTypeAPI implements PageTypeAPIInterface
 {
+    /**
+     * Add an extra hook just to modify pages
+     *
+     * @param [type] $query
+     * @param array $options
+     * @return array
+     */
+    protected function convertCustomPostsQuery(array $query, array $options = []): array
+    {
+        $query = parent::convertCustomPostsQuery($query, $options = []);
+        return HooksAPIFacade::getInstance()->applyFilters(
+            'CMSAPI:pages:query',
+            $query,
+            $options
+        );
+    }
+
     /**
      * Indicates if the passed object is of type Page
      *
