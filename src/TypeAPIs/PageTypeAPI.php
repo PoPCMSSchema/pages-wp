@@ -26,7 +26,7 @@ class PageTypeAPI extends CustomPostTypeAPI implements PageTypeAPIInterface
      */
     protected function convertCustomPostsQuery(array $query, array $options = []): array
     {
-        $query = parent::convertCustomPostsQuery($query, $options = []);
+        $query = parent::convertCustomPostsQuery($query, $options);
         return HooksAPIFacade::getInstance()->applyFilters(
             'CMSAPI:pages:query',
             $query,
