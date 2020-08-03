@@ -24,8 +24,10 @@
         "getpop/migrate-pages-wp": "dev-master"
     },
     "require-dev": {
+        "phpstan/phpstan": "^0.12",
         "phpunit/phpunit": ">=7.0",
-        "squizlabs/php_codesniffer": "^3.0"
+        "squizlabs/php_codesniffer": "^3.0",
+        "szepeviktor/phpstan-wordpress": "^0.6.2"
     },
     "autoload": {
         "psr-4": {
@@ -40,7 +42,8 @@
     "scripts": {
         "test": "phpunit",
         "check-style": "phpcs src tests",
-        "fix-style": "phpcbf src tests"
+        "fix-style": "phpcbf src tests",
+        "analyse": "phpstan analyse -c phpstan.neon.dist"
     },
     "extra": {
         "branch-alias": {
