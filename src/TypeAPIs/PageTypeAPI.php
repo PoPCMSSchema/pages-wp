@@ -105,11 +105,13 @@ class PageTypeAPI extends CustomPostTypeAPI implements PageTypeAPIInterface
      */
     public function getHomeStaticPageID()
     {
-        if (get_option('show_on_front') == 'page') {
-            $static_page_id = (int) get_option('page_on_front');
-            return $static_page_id > 0 ? $static_page_id : null;
+        if (get_option('show_on_front') !== 'page') {
+            // Errors go in here
+            return null;
         }
 
-        return null;
+        // This is the expected operation
+        $static_page_id = (int) get_option('page_on_front');
+        return $static_page_id > 0 ? $static_page_id : null;
     }
 }
