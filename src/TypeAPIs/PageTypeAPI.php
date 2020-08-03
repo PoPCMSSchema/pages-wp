@@ -20,7 +20,7 @@ class PageTypeAPI extends CustomPostTypeAPI implements PageTypeAPIInterface
     /**
      * Add an extra hook just to modify pages
      *
-     * @param [type] $query
+     * @param array $query
      * @param array $options
      * @return array
      */
@@ -37,7 +37,7 @@ class PageTypeAPI extends CustomPostTypeAPI implements PageTypeAPIInterface
     /**
      * Indicates if the passed object is of type Page
      *
-     * @param [type] $object
+     * @param object $object
      * @return boolean
      */
     public function isInstanceOfPageType($object): bool
@@ -49,7 +49,7 @@ class PageTypeAPI extends CustomPostTypeAPI implements PageTypeAPIInterface
      * Get the page with provided ID or, if it doesn't exist, null
      *
      * @param int $id
-     * @return void
+     * @return WP_Post|null
      */
     public function getPage($id)
     {
@@ -64,7 +64,7 @@ class PageTypeAPI extends CustomPostTypeAPI implements PageTypeAPIInterface
      * Indicate if an page with provided ID exists
      *
      * @param int $id
-     * @return void
+     * @return bool
      */
     public function pageExists($id): bool
     {
@@ -101,7 +101,7 @@ class PageTypeAPI extends CustomPostTypeAPI implements PageTypeAPIInterface
      * Get the ID of the static page for the homepage
      * Returns an ID (int? string?) or null
      *
-     * @return null|ID
+     * @return int|null
      */
     public function getHomeStaticPageID()
     {
