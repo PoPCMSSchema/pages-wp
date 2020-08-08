@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace PoP\PagesWP;
+namespace PoPSchema\PagesWP;
 
 use PoP\Root\Component\AbstractComponent;
 use PoP\Root\Component\YAMLServicesTrait;
-use PoP\PagesWP\Config\ServiceConfiguration;
+use PoPSchema\PagesWP\Config\ServiceConfiguration;
 
 /**
  * Initialize component
@@ -19,8 +19,8 @@ class Component extends AbstractComponent
     public static function getDependedComponentClasses(): array
     {
         return [
-            \PoP\Pages\Component::class,
-            \PoP\CustomPostsWP\Component::class,
+            \PoPSchema\Pages\Component::class,
+            \PoPSchema\CustomPostsWP\Component::class,
         ];
     }
 

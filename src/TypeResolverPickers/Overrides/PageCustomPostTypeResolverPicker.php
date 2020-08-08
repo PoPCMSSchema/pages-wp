@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace PoP\PagesWP\TypeResolverPickers\Overrides;
+namespace PoPSchema\PagesWP\TypeResolverPickers\Overrides;
 
-use PoP\Pages\Facades\PageTypeAPIFacade;
-use PoP\CustomPostsWP\TypeResolverPickers\CustomPostTypeResolverPickerInterface;
-use PoP\CustomPostsWP\TypeResolverPickers\NoCastCustomPostTypeResolverPickerTrait;
+use PoPSchema\Pages\Facades\PageTypeAPIFacade;
+use PoPSchema\CustomPostsWP\TypeResolverPickers\CustomPostTypeResolverPickerInterface;
+use PoPSchema\CustomPostsWP\TypeResolverPickers\NoCastCustomPostTypeResolverPickerTrait;
 
-class PageCustomPostTypeResolverPicker extends \PoP\Pages\TypeResolverPickers\Optional\PageCustomPostTypeResolverPicker implements CustomPostTypeResolverPickerInterface
+class PageCustomPostTypeResolverPicker extends \PoPSchema\Pages\TypeResolverPickers\Optional\PageCustomPostTypeResolverPicker implements CustomPostTypeResolverPickerInterface
 {
     use NoCastCustomPostTypeResolverPickerTrait;
 

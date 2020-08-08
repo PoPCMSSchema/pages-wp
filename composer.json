@@ -1,5 +1,5 @@
 {
-    "name": "getpop/pages-wp",
+    "name": "pop-schema/pages-wp",
     "type": "library",
     "description": "Implementation for WordPress of contracts from package \"Pages\"",
     "keywords": [
@@ -19,9 +19,9 @@
     "prefer-stable": true,
     "require": {
         "php": "~7.2",
-        "getpop/pages": "dev-master",
-        "getpop/customposts-wp": "dev-master",
-        "getpop/migrate-pages-wp": "dev-master"
+        "pop-schema/pages": "dev-master",
+        "pop-schema/customposts-wp": "dev-master",
+        "pop-schema/migrate-pages-wp": "dev-master"
     },
     "require-dev": {
         "phpunit/phpunit": ">=8.5",
@@ -30,12 +30,12 @@
     },
     "autoload": {
         "psr-4": {
-            "PoP\\PagesWP\\": "src"
+            "PoPSchema\\PagesWP\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "PoP\\PagesWP\\": "tests"
+            "PoPSchema\\PagesWP\\": "tests"
         }
     },
     "scripts": {
