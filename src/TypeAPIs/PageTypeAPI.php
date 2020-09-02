@@ -20,9 +20,9 @@ class PageTypeAPI extends CustomPostTypeAPI implements PageTypeAPIInterface
     /**
      * Add an extra hook just to modify pages
      *
-     * @param array $query
-     * @param array $options
-     * @return array
+     * @param array<string, mixed> $query
+     * @param array<string, mixed> $options
+     * @return array<string, mixed>
      */
     protected function convertCustomPostsQuery(array $query, array $options = []): array
     {
