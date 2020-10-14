@@ -6,6 +6,7 @@ namespace PoPSchema\PagesWP\Config;
 
 use PoP\Root\Component\PHPServiceConfigurationTrait;
 use PoP\ComponentModel\Container\ContainerBuilderUtils;
+use PoP\ComponentModel\Instances\InstanceManagerInterface;
 
 class ServiceConfiguration
 {
@@ -14,7 +15,7 @@ class ServiceConfiguration
     protected static function configure(): void
     {
         ContainerBuilderUtils::injectValuesIntoService(
-            'instance_manager',
+            InstanceManagerInterface::class,
             'overrideClass',
             \PoPSchema\Pages\TypeResolverPickers\Optional\PageCustomPostTypeResolverPicker::class,
             \PoPSchema\PagesWP\TypeResolverPickers\Overrides\PageCustomPostTypeResolverPicker::class
