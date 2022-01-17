@@ -2,17 +2,17 @@
 
 declare(strict_types=1);
 
-namespace PoPSchema\PagesWP\TypeAPIs;
+namespace PoPCMSSchema\PagesWP\TypeAPIs;
 
 use PoP\Root\App;
 use PoP\ComponentModel\Component as ComponentModelComponent;
 use PoP\ComponentModel\ComponentConfiguration as ComponentModelComponentConfiguration;
-use PoPSchema\CustomPostsWP\TypeAPIs\AbstractCustomPostTypeAPI;
-use PoPSchema\Pages\Component;
-use PoPSchema\Pages\ComponentConfiguration;
-use PoPSchema\Pages\TypeAPIs\PageTypeAPIInterface;
+use PoPCMSSchema\CustomPostsWP\TypeAPIs\AbstractCustomPostTypeAPI;
+use PoPCMSSchema\Pages\Component;
+use PoPCMSSchema\Pages\ComponentConfiguration;
+use PoPCMSSchema\Pages\TypeAPIs\PageTypeAPIInterface;
 use PoPSchema\SchemaCommons\Constants\QueryOptions;
-use PoPSchema\SchemaCommons\DataLoading\ReturnTypes;
+use PoPCMSSchema\SchemaCommons\DataLoading\ReturnTypes;
 use WP_Post;
 
 use function get_post;
